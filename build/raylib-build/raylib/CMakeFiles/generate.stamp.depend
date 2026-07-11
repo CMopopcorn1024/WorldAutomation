@@ -1,0 +1,22 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-4.4/Modules/CMakePushCheckState.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CPack.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CPackComponent.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-4.4/Templates/CPackConfig.cmake.in
+E:/Coding/C++/Libraries/raylib/cmake/CompileDefinitions.cmake
+E:/Coding/C++/Libraries/raylib/cmake/GlfwImport.cmake
+E:/Coding/C++/Libraries/raylib/cmake/InstallConfigurations.cmake
+E:/Coding/C++/Libraries/raylib/cmake/JoinPaths.cmake
+E:/Coding/C++/Libraries/raylib/cmake/LibraryConfigurations.cmake
+E:/Coding/C++/Libraries/raylib/cmake/LibraryPathToLinkerFlags.cmake
+E:/Coding/C++/Libraries/raylib/cmake/PackConfigurations.cmake
+E:/Coding/C++/Libraries/raylib/cmake/PopulateConfigVariablesLocally.cmake
+E:/Coding/C++/Libraries/raylib/cmake/raylib-config-version.cmake
+E:/Coding/C++/Libraries/raylib/cmake/raylib-config.cmake
+E:/Coding/C++/Libraries/raylib/raylib.pc.in
+E:/Coding/C++/Libraries/raylib/src/CMakeLists.txt

@@ -10,7 +10,7 @@
                 "y": 17.083332061767578
             }
         ],
-        "ImagePath": "Assets/Player.png",
+        "ImagePath": "Assets/Player/Player.png",
         "bounciness": 0.5,
         "drag": 8,
         "id": "Player",
@@ -30,7 +30,7 @@
                 "y": 6.200000286102295
             }
         ],
-        "ImagePath": "Assets/Rock.png",
+        "ImagePath": "Assets/Map/Resources/Rock.png",
         "bounciness": 0.5,
         "drag": 0.1,
         "id": "Basic Rock",

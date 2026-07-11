@@ -1,0 +1,51 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"E:/Coding/C++/Libraries/raylib/src/external/glfw/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@0a349a15bfae4b5ca16c",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"orderDependencies" : 
+	[
+		{
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "raylib-build/raylib/external/glfw",
+		"source" : "E:/Coding/C++/Libraries/raylib/src/external/glfw"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

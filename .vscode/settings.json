@@ -1,0 +1,13 @@
+{
+    "C_Cpp.default.compilerPath": "C:/Program Files/Microsoft Visual Studio/2026/Community/VC/Tools/MSVC/<version>/bin/Hostx64/x64/cl.exe",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "*.h": "cpp",
+        "*.hpp": "cpp"
+    },
+    "editor.formatOnSave": true,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "cmake.configureOnOpen": false
+}

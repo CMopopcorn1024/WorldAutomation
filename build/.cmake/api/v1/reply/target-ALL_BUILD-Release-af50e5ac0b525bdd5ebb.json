@@ -1,0 +1,51 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"E:/Coding/C++/Libraries/CPhysics/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "CPhysics::@aef96b520acf9839e189"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@aef96b520acf9839e189",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"orderDependencies" : 
+	[
+		{
+			"id" : "CPhysics::@aef96b520acf9839e189"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "CPhysics-build",
+		"source" : "E:/Coding/C++/Libraries/CPhysics"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

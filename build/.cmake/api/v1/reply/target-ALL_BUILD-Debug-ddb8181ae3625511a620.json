@@ -1,0 +1,69 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "Game::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
+		},
+		{
+			"id" : "raylib::@0c271260c3b05d35c250"
+		},
+		{
+			"id" : "CPhysics::@aef96b520acf9839e189"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"orderDependencies" : 
+	[
+		{
+			"id" : "Game::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
+		},
+		{
+			"id" : "raylib::@0c271260c3b05d35c250"
+		},
+		{
+			"id" : "CPhysics::@aef96b520acf9839e189"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
