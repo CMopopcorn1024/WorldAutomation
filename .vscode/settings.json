@@ -9,5 +9,6 @@
     },
     "editor.formatOnSave": true,
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "cmake.buildBeforeRun": true
 }

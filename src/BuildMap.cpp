@@ -1,52 +1,48 @@
 #include "BuildMap.h"
 #include "Electronic.h"
 
-
+#include <iostream>
 BuildMap::BuildMap(int cellSize) : cellSize(cellSize) {}
 
-bool BuildMap::addElectronic(int x, int y, Electronic* electronic)
+bool BuildMap::addElectronic(int x, int y, Electronic *electronic)
 {
 	std::pair<int, int> key = std::make_pair(x, y);
 	newElectricPosition.push_back(key);
 	if (electronicsMap.find(key) != electronicsMap.end())
 	{
-		return false; 
+		return false;
 	}
-	electronicsMap[key] = electronic;
+	electronicsMap.emplace(key, electronic);
 
-	Electronic* nearElectronic = getElectronic(electronic->getLocalX() + 1, electronic->getLocalY());
+	Electronic *nearElectronic = getElectronic(electronic->getLocalX() + 1, electronic->getLocalY());
 	if (nearElectronic != nullptr)
 	{
-		nearElectronic->connectionMapUpdate(x,y);
-		electronic->connectionMapUpdate(x+1,y);
+		nearElectronic->connectionMapUpdate(x, y);
+		electronic->connectionMapUpdate(x + 1, y);
 	}
 
 	if ((nearElectronic = getElectronic(electronic->getLocalX() - 1, electronic->getLocalY())) != nullptr)
 	{
-		nearElectronic->connectionMapUpdate(x,y);
-		electronic->connectionMapUpdate(x-1,y);
+		nearElectronic->connectionMapUpdate(x, y);
+		electronic->connectionMapUpdate(x - 1, y);
 	}
-
-	
 
 	if ((nearElectronic = getElectronic(electronic->getLocalX(), electronic->getLocalY() + 1)) != nullptr)
 	{
-		nearElectronic->connectionMapUpdate(x,y);
-		electronic->connectionMapUpdate(x,y+1);
+		nearElectronic->connectionMapUpdate(x, y);
+		electronic->connectionMapUpdate(x, y + 1);
 	}
 
 	if ((nearElectronic = getElectronic(electronic->getLocalX(), electronic->getLocalY() - 1)) != nullptr)
 	{
-		nearElectronic->connectionMapUpdate(x,y);
-		electronic->connectionMapUpdate(x,y-1);
+		nearElectronic->connectionMapUpdate(x, y);
+		electronic->connectionMapUpdate(x, y - 1);
 	}
-	
 
-	
 	return true;
 }
 
-Electronic* BuildMap::getElectronic(int x, int y)
+Electronic *BuildMap::getElectronic(int x, int y)
 {
 	std::pair<int, int> key = std::make_pair(x, y);
 	auto it = electronicsMap.find(key);
@@ -57,9 +53,9 @@ Electronic* BuildMap::getElectronic(int x, int y)
 	return nullptr;
 }
 
-void BuildMap::draw() 
+void BuildMap::draw()
 {
-	for (const auto& entry: electronicsMap)
+	for (const auto &entry : electronicsMap)
 	{
 		entry.second->draw();
 	}
