@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "CPhysics-build/RelWithDebInfo/CPhysics.lib"
+			"path" : "CPhysics-build/Release/CPhysics.lib"
 		}
 	],
 	"backtrace" : 1,
@@ -71,7 +71,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /O2 /Ob1 /DNDEBUG -std:c++17 -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD"
 				}
 			],
 			"defines" : 
@@ -127,11 +127,11 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "glfw::@0e32d4cf09e4714ddce7"
+			"id" : "raylib::@0c271260c3b05d35c250"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "raylib::@0c271260c3b05d35c250"
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"

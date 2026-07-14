@@ -14,31 +14,6 @@ bool BuildMap::addElectronic(int x, int y, Electronic *electronic)
 	}
 	electronicsMap.emplace(key, electronic);
 
-	Electronic *nearElectronic = getElectronic(electronic->getLocalX() + 1, electronic->getLocalY());
-	if (nearElectronic != nullptr)
-	{
-		nearElectronic->connectionMapUpdate(x, y);
-		electronic->connectionMapUpdate(x + 1, y);
-	}
-
-	if ((nearElectronic = getElectronic(electronic->getLocalX() - 1, electronic->getLocalY())) != nullptr)
-	{
-		nearElectronic->connectionMapUpdate(x, y);
-		electronic->connectionMapUpdate(x - 1, y);
-	}
-
-	if ((nearElectronic = getElectronic(electronic->getLocalX(), electronic->getLocalY() + 1)) != nullptr)
-	{
-		nearElectronic->connectionMapUpdate(x, y);
-		electronic->connectionMapUpdate(x, y + 1);
-	}
-
-	if ((nearElectronic = getElectronic(electronic->getLocalX(), electronic->getLocalY() - 1)) != nullptr)
-	{
-		nearElectronic->connectionMapUpdate(x, y);
-		electronic->connectionMapUpdate(x, y - 1);
-	}
-
 	return true;
 }
 
@@ -63,9 +38,46 @@ void BuildMap::draw()
 
 void BuildMap::updateConnectionMaps()
 {
+	std::vector<Electronic *> electronicsToUpdate;
 	for (std::pair<int, int> pos : newElectricPosition)
 	{
-		getElectronic(pos.first, pos.second)->connectionElectronicUpdate();
+		Electronic *electronic = getElectronic(pos.first, pos.second);
+
+		electronicsToUpdate.push_back(electronic);
+
+		Electronic *nearElectronic = getElectronic(electronic->getLocalX() + 1, electronic->getLocalY());
+		if (nearElectronic != nullptr)
+		{
+			nearElectronic->connectionMapUpdate(pos.first, pos.second);
+			electronic->connectionMapUpdate(pos.first + 1, pos.second);
+			electronicsToUpdate.push_back(nearElectronic);
+		}
+
+		if ((nearElectronic = getElectronic(electronic->getLocalX() - 1, electronic->getLocalY())) != nullptr)
+		{
+			nearElectronic->connectionMapUpdate(pos.first, pos.second);
+			electronic->connectionMapUpdate(pos.first - 1, pos.second);
+			electronicsToUpdate.push_back(nearElectronic);
+		}
+
+		if ((nearElectronic = getElectronic(electronic->getLocalX(), electronic->getLocalY() + 1)) != nullptr)
+		{
+			nearElectronic->connectionMapUpdate(pos.first, pos.second);
+			electronic->connectionMapUpdate(pos.first, pos.second + 1);
+			electronicsToUpdate.push_back(nearElectronic);
+		}
+
+		if ((nearElectronic = getElectronic(electronic->getLocalX(), electronic->getLocalY() - 1)) != nullptr)
+		{
+			nearElectronic->connectionMapUpdate(pos.first, pos.second);
+			electronic->connectionMapUpdate(pos.first, pos.second - 1);
+			electronicsToUpdate.push_back(nearElectronic);
+		}
 	}
+	for (Electronic *e : electronicsToUpdate)
+	{
+		e->connectionElectronicUpdate();
+	}
+
 	newElectricPosition.clear();
 }

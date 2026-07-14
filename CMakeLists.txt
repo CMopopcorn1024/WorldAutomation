@@ -18,6 +18,7 @@ add_executable(Game
     src/ImageObject.cpp
     src/Electronic.cpp
     src/Item.cpp
+    src/ElectronicPresets.cpp
 )
 
 target_include_directories(Game PRIVATE

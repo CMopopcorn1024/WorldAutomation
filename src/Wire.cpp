@@ -1,8 +1,8 @@
 #include "Wire.h"
 #include <iostream>
 
-Wire::Wire(int LocalX, int LocalY, BuildMap *map, float powerStorageCapacity, float powerFlowRate)
-	: Electronic(1.0f, 0.0f, LocalX, LocalY, map, powerStorageCapacity, powerFlowRate, 0.0f, std::vector<Electronic *>())
+Wire::Wire(int LocalX, int LocalY, BuildMap *map, WirePreset config)
+	: Electronic(1.0f, 0.0f, LocalX, LocalY, map, config, std::vector<Electronic *>())
 {
 }
 

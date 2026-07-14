@@ -25,6 +25,9 @@
     <ClCompile Include="E:\Coding\C++\WorldAutomation\src\Item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\Coding\C++\WorldAutomation\src\ElectronicPresets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="E:\Coding\C++\WorldAutomation\CMakeLists.txt" />

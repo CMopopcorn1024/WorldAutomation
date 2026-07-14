@@ -3,14 +3,15 @@
 #include "ImageObject.h"
 #include <CPhysics/Vector2.h>
 #include "BuildMap.h"
+#include "ElectronicPresets.h"
 #include <vector>
 
 namespace CPh = CPhysics;
 
-class Electronic :  public ImageObject
+class Electronic : public ImageObject
 {
 public:
-	Electronic( float scale, float rotation, int LocalX, int LocalY, BuildMap* map, float powerStorageCapacity, float powerFlowRate, float operatingPower, std::vector<Electronic*> connectedElectronics);
+	Electronic(float scale, float rotation, int LocalX, int LocalY, BuildMap *map, ElectronicPreset config, std::vector<Electronic *> connectedElectronics);
 
 	float AddPower(float delta);
 	void sendPower(float dt);
@@ -21,20 +22,15 @@ public:
 	int getLocalY() { return LocalY; }
 
 	void draw() override;
-protected:
-	float powerStorageCapacity;
-	float powerFlowRate;
-	float operatingPower;
 
+protected:
 	float currentPowerStorage = 0.0f;
-	std::vector<Electronic*> connectedElectronics;
+	std::vector<Electronic *> connectedElectronics;
 
 	int LocalX;
 	int LocalY;
 	std::vector<std::pair<int, int>> connectionDirections;
-	BuildMap* map;
+	BuildMap *map;
 	CPh::Vector2 position;
-
-
+	ElectronicPreset config;
 };
-

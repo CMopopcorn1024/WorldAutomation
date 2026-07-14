@@ -1,18 +1,11 @@
 {
-	"archive" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "/machine:x64",
-				"role" : "flags"
-			}
-		]
-	},
 	"artifacts" : 
 	[
 		{
-			"path" : "CPhysics-build/MinSizeRel/CPhysics.lib"
+			"path" : "MinSizeRel/Game.exe"
+		},
+		{
+			"path" : "MinSizeRel/Game.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -20,13 +13,14 @@
 	{
 		"commands" : 
 		[
-			"add_library",
+			"add_executable",
 			"target_link_libraries",
 			"target_include_directories"
 		],
 		"files" : 
 		[
-			"E:/Coding/C++/Libraries/CPhysics/CMakeLists.txt"
+			"CMakeLists.txt",
+			"E:/Coding/C++/Libraries/raylib/src/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -36,19 +30,28 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 9,
+				"line" : 12,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 26,
+				"line" : 28,
 				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 107,
+				"parent" : 3
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 21,
+				"line" : 24,
 				"parent" : 0
 			}
 		]
@@ -60,6 +63,10 @@
 	},
 	"compileDependencies" : 
 	[
+		{
+			"backtrace" : 2,
+			"id" : "CPhysics::@aef96b520acf9839e189"
+		},
 		{
 			"backtrace" : 2,
 			"id" : "raylib::@0c271260c3b05d35c250"
@@ -88,11 +95,15 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 3,
+					"backtrace" : 5,
+					"path" : "E:/Coding/C++/WorldAutomation/../Libraries/raylib/src"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "E:/Coding/C++/Libraries/CPhysics/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "E:/Coding/C++/Libraries/CPhysics/../nlohmann-json/single_include"
 				},
 				{
@@ -127,44 +138,86 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "glfw::@0e32d4cf09e4714ddce7"
+			"id" : "raylib::@0c271260c3b05d35c250"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "raylib::@0c271260c3b05d35c250"
+			"id" : "CPhysics::@aef96b520acf9839e189"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "CPhysics::@aef96b520acf9839e189",
-	"interfaceCompileDependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "raylib::@0c271260c3b05d35c250"
-		}
-	],
-	"interfaceLinkLibraries" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "raylib::@0c271260c3b05d35c250"
-		}
-	],
+	"id" : "Game::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O1 /Ob1 /DNDEBUG -MD",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /INCREMENTAL:NO",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "CPhysics-build\\MinSizeRel\\CPhysics.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "raylib-build\\raylib\\MinSizeRel\\raylib.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "opengl32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "glu32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "winmm.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
 	"linkLibraries" : 
 	[
 		{
 			"backtrace" : 2,
+			"id" : "CPhysics::@aef96b520acf9839e189"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "raylib::@0c271260c3b05d35c250"
 		}
 	],
-	"name" : "CPhysics",
-	"nameOnDisk" : "CPhysics.lib",
+	"name" : "Game",
+	"nameOnDisk" : "Game.exe",
 	"paths" : 
 	{
-		"build" : "CPhysics-build",
-		"source" : "E:/Coding/C++/Libraries/CPhysics"
+		"build" : ".",
+		"source" : "."
 	},
 	"sourceGroups" : 
 	[
@@ -193,7 +246,7 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/Circle.cpp",
+			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -203,7 +256,7 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/CollisionObject.cpp",
+			"path" : "src/Player.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -213,7 +266,7 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/Object.cpp",
+			"path" : "src/Harvestable.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -223,7 +276,7 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/ObjectCreation.cpp",
+			"path" : "src/BuildMap.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -233,7 +286,7 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/PhysicsObject.cpp",
+			"path" : "src/Wire.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -243,7 +296,7 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/Rectangle.cpp",
+			"path" : "src/ImageObject.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -253,7 +306,7 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/Segment.cpp",
+			"path" : "src/Electronic.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -263,7 +316,7 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/Vector2.cpp",
+			"path" : "src/Item.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -273,9 +326,9 @@
 				1
 			],
 			"compileGroupIndex" : 0,
-			"path" : "E:/Coding/C++/Libraries/CPhysics/src/DeltaTime.cpp",
+			"path" : "src/ElectronicPresets.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "STATIC_LIBRARY"
+	"type" : "EXECUTABLE"
 }

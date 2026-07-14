@@ -6,6 +6,7 @@
 #include "src/Harvestable.h"
 #include "src/BuildMap.h"
 #include "src/Wire.h"
+#include "src/ElectronicPresets.h"
 
 #include <CPhysics/PhysicsObject.h>
 #include <CPhysics/DeltaTime.h>
@@ -33,9 +34,7 @@ int main()
 
     BuildMap map = BuildMap(50);
 
-    Wire(0, 0, &map, 50, 5);
-    Wire(-1, 0, &map, 50, 5);
-    Wire(0, -1, &map, 50, 5);
+    Wire(0, 0, &map, ObjectPresets::ElectronicPreset);
     map.updateConnectionMaps();
 
     Item basicRockItem = Item("Rock", LoadTexture("Rock.png"), 0.5f, 0);

@@ -1,8 +1,7 @@
 #include "Electronic.h"
-
 #include <iostream>
-Electronic::Electronic(float scale, float rotation, int LocalX, int LocalY, BuildMap *map, float powerStorageCapacity, float powerFlowRate, float operatingPower, std::vector<Electronic *> connectedElectronics)
-	: ImageObject(LoadTexture("Assets/Unloaded.png"), scale, rotation), LocalX(LocalX), LocalY(LocalY), map(map), powerStorageCapacity(powerStorageCapacity), powerFlowRate(powerFlowRate), operatingPower(operatingPower)
+Electronic::Electronic(float scale, float rotation, int LocalX, int LocalY, BuildMap *map, ElectronicPreset config, std::vector<Electronic *> connectedElectronics)
+	: ImageObject(LoadTexture("Assets/Unloaded.png"), scale, rotation), LocalX(LocalX), LocalY(LocalY), map(map), config(config)
 {
 	position = map->getPosition(LocalX, LocalY);
 	ImageObject::makeSize(50);
@@ -13,10 +12,10 @@ Electronic::Electronic(float scale, float rotation, int LocalX, int LocalY, Buil
 float Electronic::AddPower(float delta)
 {
 	currentPowerStorage += delta;
-	if (currentPowerStorage > powerStorageCapacity)
+	if (currentPowerStorage > config.powerStorageCapacity)
 	{
-		float excess = currentPowerStorage - powerStorageCapacity;
-		currentPowerStorage = powerStorageCapacity;
+		float excess = currentPowerStorage - config.powerStorageCapacity;
+		currentPowerStorage = config.powerStorageCapacity;
 		return excess;
 	}
 	return 0;
@@ -26,8 +25,8 @@ void Electronic::sendPower(float dt)
 {
 	for (Electronic *e : connectedElectronics)
 	{
-		float returnPower = e->AddPower(powerFlowRate * dt);
-		currentPowerStorage -= (powerFlowRate * dt) - returnPower;
+		float returnPower = e->AddPower(config.powerFlowRate * dt);
+		currentPowerStorage -= (config.powerFlowRate * dt) - returnPower;
 	}
 }
 

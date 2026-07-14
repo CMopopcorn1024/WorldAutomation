@@ -5,25 +5,22 @@
 #include "raylib.h"
 #include "ImageObject.h"
 
-//CPhysics
+// CPhysics
 #include <CPhysics/Object.h>
 namespace CPh = CPhysics;
-
-
-
 
 class Player : public CPhysics::Object, public ImageObject
 {
 public:
-	Player(json data,  float scale, float rotation, float speed);
+	Player(json data, float scale, float rotation, float speed, BuildMap *map);
 
 	void draw() override;
 
-	
 	void update(float dt);
 
 private:
 	float speed;
 	void checkInput(float dt);
-	
+	bool buildMode = false;
+	BuildMap *map;
 };
