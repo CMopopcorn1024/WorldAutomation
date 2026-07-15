@@ -32,7 +32,7 @@ int main()
 
     BuildMap map = BuildMap(50);
 
-    Player player = Player(CPhysicsObjectCreation::ObjectCreator::LoadObjects(objectFilePath, "Player"), 0.5f, 0, 55.0f, &map);
+    Player player = Player(CPhysicsObjectCreation::ObjectCreator::LoadObjects(objectFilePath, "Player"), 0.5f, 0, 55.0f, &map, "Assets/Player/BuildDrone.png");
 
     Wire(0, 0, &map, ObjectPresets::BasicWire);
     map.updateConnectionMaps();

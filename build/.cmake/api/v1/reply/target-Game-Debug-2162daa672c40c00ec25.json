@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Release/Game.exe"
+			"path" : "Debug/Game.exe"
 		},
 		{
-			"path" : "Release/Game.pdb"
+			"path" : "Debug/Game.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -78,7 +78,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd"
 				}
 			],
 			"defines" : 
@@ -141,11 +141,11 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "raylib::@0c271260c3b05d35c250"
+			"id" : "CPhysics::@aef96b520acf9839e189"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "CPhysics::@aef96b520acf9839e189"
+			"id" : "raylib::@0c271260c3b05d35c250"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
@@ -157,11 +157,11 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /INCREMENTAL:NO",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
 				"role" : "flags"
 			},
 			{
@@ -170,12 +170,12 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "CPhysics-build\\Release\\CPhysics.lib",
+				"fragment" : "CPhysics-build\\Debug\\CPhysics.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "raylib-build\\raylib\\Release\\raylib.lib",
+				"fragment" : "raylib-build\\raylib\\Debug\\raylib.lib",
 				"role" : "libraries"
 			},
 			{

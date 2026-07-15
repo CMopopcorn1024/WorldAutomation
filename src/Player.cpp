@@ -3,7 +3,7 @@
 #include "Wire.h"
 #include "ElectronicPresets.h"
 
-Player::Player(json data, float scale, float rotation, float speed, BuildMap *map) : CPh::Object(data), ImageObject(data["ImagePath"].get<std::string>().c_str(), scale, rotation), speed(speed), map(map)
+Player::Player(json data, float scale, float rotation, float speed, BuildMap *map, const char *BuildModeTexturePath) : CPh::Object(data), PlayerTexturePath(data["ImagePath"].get<std::string>().c_str()), ImageObject(data["ImagePath"].get<std::string>().c_str(), scale, rotation), speed(speed), map(map), BuildModeTexturePath(BuildModeTexturePath)
 {
 }
 
@@ -27,10 +27,21 @@ void Player::checkInput(float dt)
 	velocity += changeVel * 100 * dt;
 
 	if (IsKeyPressed(KEY_B))
+	{
 		buildMode = !buildMode;
+		if (buildMode)
+		{
+			setTexture(BuildModeTexturePath);
+		}
+		else
+		{
+			setTexture(PlayerTexturePath);
+		}
+	}
 
 	if (buildMode)
 	{
+
 		if (IsKeyDown(KEY_ONE))
 		{
 			std::cout << "building" << std::endl;
@@ -43,8 +54,7 @@ void Player::checkInput(float dt)
 
 void Player::draw()
 {
-	ImageObject::draw(position.x - texture->width * scale / 2, position.y - texture->height * scale / 2);
-	DrawRectangle(position.x - 3, position.y - 3, 6, 6, RED);
+	ImageObject::draw(position.x, position.y);
 	/*for (CPh::Rectangle* rect : rects)
 	{
 		DrawRectangle(rect->topLeft.x, rect->topLeft.y, rect->bottomRight.x - rect->topLeft.x, rect->bottomRight.y - rect->topLeft.y, RED);

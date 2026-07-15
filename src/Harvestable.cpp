@@ -6,7 +6,7 @@ Harvestable::Harvestable(json data, float scale, float rotation) : CPh::Object(d
 
 void Harvestable::draw()
 {
-	ImageObject::draw(position.x - texture->width * scale / 2, position.y - texture->height * scale / 2);
+	ImageObject::draw(position.x, position.y);
 	/*for (CPh::Rectangle* rect : rects)
 	{
 		DrawRectangle(rect->topLeft.x, rect->topLeft.y, rect->bottomRight.x - rect->topLeft.x, rect->bottomRight.y - rect->topLeft.y, RED);
