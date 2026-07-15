@@ -22,9 +22,6 @@
     <ClCompile Include="E:\Coding\C++\WorldAutomation\src\Electronic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Coding\C++\WorldAutomation\src\Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="E:\Coding\C++\WorldAutomation\src\ElectronicPresets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

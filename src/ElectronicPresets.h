@@ -1,7 +1,4 @@
-namespace ObjectPresets
-{
-    WirePreset BasicWire;
-};
+#pragma once
 
 struct ElectronicPreset
 {
@@ -13,4 +10,11 @@ struct WirePreset : public ElectronicPreset
 {
     float powerStorageCapacity = -1;
     float powerFlowRate = -1;
+};
+
+namespace ObjectPresets
+{
+    inline WirePreset BasicWire = {
+        50,
+        5};
 };

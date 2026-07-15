@@ -4,6 +4,7 @@
 
 #include "raylib.h"
 #include "ImageObject.h"
+#include "BuildMap.h"
 
 // CPhysics
 #include <CPhysics/Object.h>

@@ -1,8 +1,11 @@
 ================================================================================
 Linker Errors
-Generated: 2026-07-11T06:07:33.081Z
-Total Errors: 1
+Generated: 2026-07-15T02:55:27.853Z
+Total Errors: 2
 ================================================================================
 
-[LNK1168] (MSVC)
-cannot open E:\Coding\C++\WorldAutomation\build\Debug\Game.exe for writing [E:\Coding\C++\WorldAutomation\build\Game.vcxproj]
+[LNK2001] (MSVC)
+unresolved external symbol "private: static class std::vector<struct Texture *,class std::allocator<struct Texture *> > ImageObject::textures" (?textures@ImageObject@@0V?$vector@PEAUTexture@@V?$allocator@PEAUTexture@@@std@@@std@@A) [E:\Coding\C++\WorldAutomation\build\Game.vcxproj]
+
+[LNK1120] (MSVC)
+1 unresolved externals [E:\Coding\C++\WorldAutomation\build\Game.vcxproj]

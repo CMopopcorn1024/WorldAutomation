@@ -11,11 +11,11 @@ void Wire::connectionElectronicUpdate()
 	std::cout << "Updating Wire at: " << LocalX << " " << LocalY << "    to " << connectionDirections.size() << " electronics.   With ID: " << this << std::endl;
 	int numConnections = connectionDirections.size();
 	if (numConnections == 0)
-		texture = LoadTexture("Assets/Technology/Wires/0Wire.png");
+		setTexture("Assets/Technology/Wires/0Wire.png");
 
 	if (numConnections == 1)
 	{
-		texture = LoadTexture("Assets/Technology/Wires/1Wire.png");
+		setTexture("Assets/Technology/Wires/1Wire.png");
 		if (std::find(connectionDirections.begin(), connectionDirections.end(), std::make_pair(0, -1)) != connectionDirections.end())
 			rotation = 90.0f;
 		if (std::find(connectionDirections.begin(), connectionDirections.end(), std::make_pair(1, 0)) != connectionDirections.end())
@@ -33,23 +33,33 @@ void Wire::connectionElectronicUpdate()
 
 		if (dx != 0 && dy != 0)
 		{
-			texture = LoadTexture("Assets/Technology/Wires/2TurnWire.png");
+			setTexture("Assets/Technology/Wires/2TurnWire.png");
 
-			if ((dir1.first == -1 && dir2.second == 1) || (dir2.first == -1 && dir1.second == 1))
+			if ((dir1.first == -1 && dir2.second == 1) ||
+				(dir2.first == -1 && dir1.second == 1))
+			{
 				rotation = 0;
-
-			else if ((dir1.first == -1 && dir2.second == -1))
+			}
+			else if ((dir1.first == -1 && dir2.second == -1) ||
+					 (dir2.first == -1 && dir1.second == -1))
+			{
 				rotation = 90.0f;
-
-			else if ((dir1.first == 1 && dir2.second == -1) || (dir2.first == 1 && dir1.second == -1))
+			}
+			else if ((dir1.first == 1 && dir2.second == -1) ||
+					 (dir2.first == 1 && dir1.second == -1))
+			{
 				rotation = 180.0f;
-			else
+			}
+			else if ((dir1.first == 1 && dir2.second == 1) ||
+					 (dir2.first == 1 && dir1.second == 1))
+			{
 				rotation = 270.0f;
+			}
 		}
 
 		else
 		{
-			texture = LoadTexture("Assets/Technology/Wires/2StraightWire.png");
+			setTexture("Assets/Technology/Wires/2StraightWire.png");
 			if (dy != 0)
 				rotation = 90.0f;
 			else
@@ -59,7 +69,7 @@ void Wire::connectionElectronicUpdate()
 
 	if (numConnections == 3)
 	{
-		texture = LoadTexture("Assets/Technology/Wires/3Wire.png");
+		setTexture("Assets/Technology/Wires/3Wire.png");
 		if (std::find(connectionDirections.begin(), connectionDirections.end(), std::make_pair(0, -1)) == connectionDirections.end())
 			rotation = 0;
 		else if (std::find(connectionDirections.begin(), connectionDirections.end(), std::make_pair(1, 0)) == connectionDirections.end())
@@ -71,6 +81,6 @@ void Wire::connectionElectronicUpdate()
 	}
 
 	if (numConnections == 4)
-		texture = LoadTexture("Assets/Technology/Wires/4Wire.png");
+		setTexture("Assets/Technology/Wires/4Wire.png");
 	ImageObject::makeSize(50);
 }

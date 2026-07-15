@@ -30,15 +30,14 @@ int main()
     SetTargetFPS(60);
     CPh::DeltaTime deltaTime;
 
-    Player player = Player(CPhysicsObjectCreation::ObjectCreator::LoadObjects(objectFilePath, "Player"), 0.5f, 0, 55.0f);
-
     BuildMap map = BuildMap(50);
 
-    Wire(0, 0, &map, ObjectPresets::ElectronicPreset);
+    Player player = Player(CPhysicsObjectCreation::ObjectCreator::LoadObjects(objectFilePath, "Player"), 0.5f, 0, 55.0f, &map);
+
+    Wire(0, 0, &map, ObjectPresets::BasicWire);
     map.updateConnectionMaps();
 
-    Item basicRockItem = Item("Rock", LoadTexture("Rock.png"), 0.5f, 0);
-    Harvestable basicRock = Harvestable(CPhysicsObjectCreation::ObjectCreator::LoadObjects(objectFilePath, "Basic Rock"), basicRockItem, 1, 0);
+    Harvestable basicRock = Harvestable(CPhysicsObjectCreation::ObjectCreator::LoadObjects(objectFilePath, "Basic Rock"), 1, 0);
 
     Camera2D camera = {0};
 

@@ -17,7 +17,6 @@ add_executable(Game
     src/Wire.cpp
     src/ImageObject.cpp
     src/Electronic.cpp
-    src/Item.cpp
     src/ElectronicPresets.cpp
 )
 

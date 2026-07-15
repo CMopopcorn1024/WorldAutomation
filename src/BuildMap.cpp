@@ -81,3 +81,11 @@ void BuildMap::updateConnectionMaps()
 
 	newElectricPosition.clear();
 }
+
+std::pair<int, int> BuildMap::positionToCell(CPh::Vector2 pos) const
+{
+	std::pair<int, int> cell;
+	cell.first = pos.x / cellSize;
+	cell.second = pos.y / cellSize;
+	return cell;
+}

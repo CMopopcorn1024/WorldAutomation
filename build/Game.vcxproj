@@ -371,7 +371,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="E:\Coding\C++\WorldAutomation\src\Wire.cpp" />
     <ClCompile Include="E:\Coding\C++\WorldAutomation\src\ImageObject.cpp" />
     <ClCompile Include="E:\Coding\C++\WorldAutomation\src\Electronic.cpp" />
-    <ClCompile Include="E:\Coding\C++\WorldAutomation\src\Item.cpp" />
     <ClCompile Include="E:\Coding\C++\WorldAutomation\src\ElectronicPresets.cpp" />
   </ItemGroup>
   <ItemGroup />

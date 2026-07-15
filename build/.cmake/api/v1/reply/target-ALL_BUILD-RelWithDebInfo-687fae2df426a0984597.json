@@ -22,7 +22,7 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "Game::@6890427a1f51a3e7e1df"
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
 		},
 		{
 			"id" : "raylib::@0c271260c3b05d35c250"
@@ -31,10 +31,10 @@
 			"id" : "CPhysics::@aef96b520acf9839e189"
 		},
 		{
-			"id" : "glfw::@0e32d4cf09e4714ddce7"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"id" : "Game::@6890427a1f51a3e7e1df"
 		}
 	],
 	"folder" : 
@@ -47,7 +47,7 @@
 	"orderDependencies" : 
 	[
 		{
-			"id" : "Game::@6890427a1f51a3e7e1df"
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
 		},
 		{
 			"id" : "raylib::@0c271260c3b05d35c250"
@@ -56,7 +56,7 @@
 			"id" : "CPhysics::@aef96b520acf9839e189"
 		},
 		{
-			"id" : "glfw::@0e32d4cf09e4714ddce7"
+			"id" : "Game::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 

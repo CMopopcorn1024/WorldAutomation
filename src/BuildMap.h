@@ -26,6 +26,7 @@ public:
 	CPh::Vector2 getPosition(int x, int y) { return CPh::Vector2(x * cellSize, y * cellSize); }
 	void draw();
 	void updateConnectionMaps();
+	std::pair<int, int> positionToCell(CPh::Vector2 pos) const;
 
 private:
 	int cellSize;
