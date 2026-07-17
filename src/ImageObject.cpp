@@ -20,6 +20,7 @@ void ImageObject::draw(float x, float y)
 	Vector2 origin = {texture->width / 2.0f * scale, texture->height / 2.0f * scale};
 
 	DrawTexturePro(*texture, source, dest, origin, rotation, WHITE);
+	DrawRectangle(x - 3, y - 3, 6, 6, GREEN);
 }
 
 void ImageObject::makeSize(float size)

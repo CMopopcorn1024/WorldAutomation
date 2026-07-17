@@ -28,12 +28,16 @@ Electronic *BuildMap::getElectronic(int x, int y)
 	return nullptr;
 }
 
-void BuildMap::draw()
+void BuildMap::draw(CPh::Vector2 pos)
 {
 	for (const auto &entry : electronicsMap)
 	{
 		entry.second->draw();
 	}
+
+	std::pair<int, int> cell = positionToCell(pos);
+	CPh::Vector2 cellPos = getPosition(cell);
+	DrawRectangle(cellPos.x, cellPos.y, cellSize, cellSize, BLACK);
 }
 
 void BuildMap::updateConnectionMaps()

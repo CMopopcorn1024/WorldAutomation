@@ -51,7 +51,7 @@ int main()
 
     // Load test Rock Harvestable
 
-    while (!WindowShouldClose())
+        while (!WindowShouldClose())
     {
 
         // Update
@@ -75,7 +75,7 @@ int main()
         // Effected by camera
         BeginMode2D(camera);
 
-        map.draw();
+        map.draw(player.getPosition());
         player.draw();
         basicRock.draw();
 

@@ -5,7 +5,7 @@
 		"commands" : [],
 		"files" : 
 		[
-			"E:/Coding/C++/Libraries/raylib/CMakeLists.txt"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -22,10 +22,16 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "glfw::@0e32d4cf09e4714ddce7"
+			"id" : "Game::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "raylib::@0c271260c3b05d35c250"
+		},
+		{
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
+		},
+		{
+			"id" : "CPhysics::@aef96b520acf9839e189"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
@@ -35,22 +41,28 @@
 	{
 		"name" : "CMakePredefinedTargets"
 	},
-	"id" : "ALL_BUILD::@74b65106cc5119f5c2ab",
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
 	"name" : "ALL_BUILD",
 	"orderDependencies" : 
 	[
 		{
-			"id" : "glfw::@0e32d4cf09e4714ddce7"
+			"id" : "Game::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "raylib::@0c271260c3b05d35c250"
+		},
+		{
+			"id" : "glfw::@0e32d4cf09e4714ddce7"
+		},
+		{
+			"id" : "CPhysics::@aef96b520acf9839e189"
 		}
 	],
 	"paths" : 
 	{
-		"build" : "raylib-build",
-		"source" : "E:/Coding/C++/Libraries/raylib"
+		"build" : ".",
+		"source" : "."
 	},
 	"sources" : [],
 	"type" : "UTILITY"

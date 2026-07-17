@@ -3,7 +3,7 @@
 Electronic::Electronic(float scale, float rotation, int LocalX, int LocalY, BuildMap *map, ElectronicPreset config, std::vector<Electronic *> connectedElectronics)
 	: ImageObject("Assets/Unloaded.png", scale, rotation), LocalX(LocalX), LocalY(LocalY), map(map), config(config)
 {
-	position = map->getPosition(LocalX, LocalY);
+	position = map->getPositionCenter(LocalX, LocalY);
 	ImageObject::makeSize(50);
 
 	if (!map->addElectronic(LocalX, LocalY, this))
@@ -47,7 +47,7 @@ void Electronic::connectionMapUpdate(int x, int y)
 
 void Electronic::draw()
 {
-	ImageObject::draw(position.x - texture->height * scale / 2, position.y - texture->height * scale / 2);
+	ImageObject::draw(position.x, position.y);
 }
 
 void Electronic::connectionElectronicUpdate()
